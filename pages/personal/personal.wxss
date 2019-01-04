@@ -1,0 +1,26 @@
+/* pages/personal/personal.wxss */
+page {
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+.form-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24rpx;
+  padding: 24rpx;
+  border-bottom: 1px solid #eee;
+}
+label {
+  margin-right: 24rpx;
+}
+.form-item-pic {
+  width: 145rpx;
+  height: 145rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #eee;
+}
+.form-item-pic image {
+  width: 100%;
+  height: 100%;
+}

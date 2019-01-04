@@ -1,0 +1,13 @@
+<view class="wx-dialog-container" hidden="{{isShow}}">
+  <!-- 遮罩 -->
+  <view class="wx-mask"></view>
+  <!-- 主体结构 -->
+  <view class="wx-dialog">
+    <view class="wx-dialog-title">{{title}}</view>
+    <view class="wx-dialog-content">{{content}}</view>
+    <view class="wx-dialog-footer">
+      <view class="wx-dialog-btn" bindtap='hideDialog'>{{cancelText}}</view>
+      <view class="wx-dialog-btn">{{confirmText}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="userinfo">
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <!-- <block wx:else>
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </block> -->
+</view>
+<block wx:if="{{hasUserInfo}}">
+  <view class='page-sec'>
+    <navigator 
+      class="page-sec-title"
+      hover-class="none"
+      url="../cosmetics/cosmetics">
+      <text>彩妆</text>
+      <i class="iconfont m-icon-jiantou-you"></i>
+    </navigator>
+    <view class="page-sec-box">
+      <navigator wx:for="{{array1}}" wx:key="{{item._id}}" class="page-sec-item">{{item.name}}</navigator>
+    </view>
+  </view>
+  <view class="page-sec">
+    <navigator 
+      class="page-sec-title"
+      hover-class="none"
+      url="../skin/skin">
+      <text>护肤</text>
+      <i class="iconfont m-icon-jiantou-you"></i>
+    </navigator>
+    <view class="page-sec-box">
+      <navigator wx:for="{{array2}}" wx:key="{{item._id}}" class="page-sec-item">{{item.name}}</navigator>
+    </view>
+  </view>
+</block>
+
+<dialog
+  id="dialog"
+  title="测试标题是否修改"
+  content="接着是内容"
+  cancel-text="了解"
+  confirm-text="好的"
+  bindhide='hide'
+></dialog>
