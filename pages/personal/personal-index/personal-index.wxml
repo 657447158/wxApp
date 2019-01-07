@@ -1,0 +1,23 @@
+<view>
+  <view class='user-info'>
+    <image class="user-avatar" src='{{userInfo.avatarUrl}}'></image>
+    <text class="user-name">{{userInfo.nickName}}</text>
+  </view>
+  <view class='user-items'>
+    <view class='user-items-title'>常用功能</view>
+    <view class='user-items-box'>
+      <navigator url="../personal-add/personal-add?type=0">
+        <view class='user-item'>
+          <icon class="iconfont m-icon-jianyi"></icon>
+          <text>我的彩妆</text>
+        </view>
+      </navigator>
+      <navigator url="../personal-add/personal-add?type=1">
+        <view class='user-item'>
+          <icon class="iconfont m-icon-kaipiaoma"></icon>
+          <text>我的护肤</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

@@ -2,6 +2,10 @@
 page {
   padding: 24rpx;
   box-sizing: border-box;
+  background-color: #fff;
+}
+picker {
+  width: 100%;
 }
 .form-item {
   display: flex;

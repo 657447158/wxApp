@@ -1,2 +1,22 @@
-<!--pages/cosmetics/cosmetics.wxml-->
-<text>pages/cosmetics/cosmetics.wxml</text>
+<view class='tab-wrap'>
+  <view
+    wx:for="{{tabList}}"
+    wx:key="{{item.index}}"
+    data-index="{{item.index}}"
+    bindtap="changeTab"
+    class="{{tabIndex === item.index ? 'active' : ''}}"
+  >
+  {{item.name}}
+  </view>
+</view>
+<view class='list-wrap' wx:if="{{list.length > 0}}">
+  <view 
+    class='list-item'
+    wx:for="{{list}}"
+    wx:key="{{item._id}}"
+  >
+    <image src='{{item.path}}'></image>
+    <text class='list-item-name'>{{item.name}}</text>
+  </view>
+</view>
+<view class="no-data" wx:else>暂无数据</view>

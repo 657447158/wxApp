@@ -1,6 +1,6 @@
 <!--pages/login/login.wxml-->
 <view class="container">
-  <image class="user-avatar" src="/lib/image/logo.png"></image>
-  <text class="user-name">Hello , JIANGPING</text>
-  <button class="moto-button" open-type="getUserInfo" bindgetuserinfo="getUserInfo">开启小程序之旅</button>
+  <image class="user-avatar" src="{{userInfo.avatarUrl ? userInfo.avatarUrl : '/lib/image/logo.png'}}"></image>
+  <text class="user-name">Hello <text wx:if="{{userInfo.nickName}}">, {{userInfo.nickName}}</text></text>
+  <button class="moto-button" open-type="getUserInfo" bindgetuserinfo="getUserInfo">开启我的美妆之旅</button>
 </view>

@@ -4,11 +4,11 @@
     <navigator 
       class="page-sec-title"
       hover-class="none"
-      url="../cosmetics/cosmetics">
+      url="../cosmetics/cosmetics?type=0">
       <text>彩妆</text>
       <i class="iconfont m-icon-jiantou-you"></i>
     </navigator>
-    <view class="page-sec-box">
+    <view wx:if="{{array1.length > 0}}" class="page-sec-box">
       <navigator wx:for="{{array1}}" wx:key="{{item._id}}" class="page-sec-item">{{item.name}}</navigator>
     </view>
   </view>
@@ -20,17 +20,20 @@
       <text>护肤</text>
       <i class="iconfont m-icon-jiantou-you"></i>
     </navigator>
-    <view class="page-sec-box">
+    <view wx:if="{{array2.length > 0}}" class="page-sec-box">
+      <navigator wx:for="{{array2}}" wx:key="{{item._id}}" class="page-sec-item">{{item.name}}</navigator>
+    </view>
+  </view>
+   <view class="page-sec">
+    <navigator 
+      class="page-sec-title"
+      hover-class="none"
+      url="../skin/skin">
+      <text>种草</text>
+      <i class="iconfont m-icon-jiantou-you"></i>
+    </navigator>
+    <view wx:if="{{array2.length > 0}}" class="page-sec-box">
       <navigator wx:for="{{array2}}" wx:key="{{item._id}}" class="page-sec-item">{{item.name}}</navigator>
     </view>
   </view>
 </block>
-
-<dialog
-  id="dialog"
-  title="测试标题是否修改"
-  content="接着是内容"
-  cancel-text="了解"
-  confirm-text="好的"
-  bindhide='hide'
-></dialog>

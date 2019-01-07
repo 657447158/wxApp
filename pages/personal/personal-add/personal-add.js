@@ -1,18 +1,62 @@
 // pages/personal/personal.js
+const util = require('../../../utils/util.js');
+const now = util.formatDate(new Date(), '-');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    array: ['彩妆', '护肤'],
+    array: ['彩妆', '护肤', '种草'],
     index: 0,
     goodsValue: '',
-    logo: ''
+    sizeValue: '',
+    logo: '',
+    productDate: now,
+    buyDate: now,
+    openDate: '',
+    emptyDate: ''
+  },
+  onLoad: function (options) {
+    this.setData({
+      index: options.type || 0
+    })
   },
   bindPickerChange (e) {
     this.setData({
       index: e.detail.value
+    })
+  },
+  /**
+  * 生产日期选择
+  */
+  bindProductDateChange(e) {
+    this.setData({
+      productDate: e.detail.value
+    })
+  },
+  /**
+   * 购买日期选择
+   */
+  bindBuyTimeChange (e) {
+    this.setData({
+      buyDate: e.detail.value
+    })
+  },
+  /**
+   * 开封日期选择
+   */
+  bindOpenTimeChange(e) {
+    this.setData({
+      openDate: e.detail.value
+    })
+  },
+  /**
+   * 空瓶日期选择
+   */
+  bindEmptyTimeChange(e) {
+    this.setData({
+      emptyDate: e.detail.value
     })
   },
   /**
@@ -35,10 +79,18 @@ Page({
   formSubmit (e) {
     const _this = this
     const formData = e.detail.value
+    console.log(formData)
     formData.path = _this.data.logo
     if (!formData.name) {
       wx.showToast({
         title: '请录入商品名称！',
+        icon: 'none'
+      })
+      return
+    }
+    if (!formData.size) {
+      wx.showToast({
+        title: '请录入商品规格！',
         icon: 'none'
       })
       return
@@ -61,10 +113,15 @@ Page({
           _this.setData({
             index: 0,
             logo: '',
-            goodsValue: ''
+            goodsValue: '',
+            sizeValue: '',
+            productDate: now,
+            buyDate: now,
+            openDate: now,
+            emptyDate: now
           })
           wx.switchTab({
-            url: '../index/index'
+            url: '../../index/index'
           })
         }, 2000)
       }

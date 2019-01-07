@@ -1,0 +1,87 @@
+<form bindsubmit='formSubmit'>
+  <!-- 分类选择 -->
+  <view class='form-item'>
+    <picker name="type" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        <label>分类选择：</label>{{array[index]}}
+      </view>
+    </picker>
+  </view>
+  <!-- 商品名称 -->
+  <view class='form-item'>
+    <label>商品名称：</label>
+    <input name="name" type='text' value='{{goodsValue}}'></input>
+  </view>
+  <!-- 商品规格 -->
+  <view class='form-item'>
+    <label>商品规格：</label>
+    <input name="size" type='text' value='{{sizeValue}}'></input>
+  </view>
+  <!-- 生产日期 -->
+  <view class='form-item'>
+    <picker
+     mode="date"
+     name="productDate"
+     value="{{productDate}}"
+     bindchange="bindProductDateChange"
+    >
+      <view class="picker">
+        <label>生产日期：</label>{{productDate}}
+      </view>
+    </picker>
+  </view>
+  <!-- 购买日期 -->
+  <view class='form-item'>
+    <picker
+     mode="date"
+     name="buyDate"
+     value="{{buyDate}}"
+     bindchange="bindBuyTimeChange" 
+    >
+      <view class="picker">
+        <label>购买日期：</label>{{buyDate}}
+      </view>
+    </picker>
+  </view>
+  <!-- 开封日期 -->
+  <view class='form-item'>
+    <picker
+     mode="date"
+     name="openDate"
+     value="{{openDate}}"
+     bindchange="bindOpenTimeChange" 
+    >
+      <view class="picker">
+        <label>开封日期：</label>{{openDate}}
+      </view>
+    </picker>
+  </view>
+  <!-- 空瓶日期 -->
+  <view class='form-item'>
+    <picker
+     mode="date"
+     name="emptyDate"
+     value="{{emptyDate}}"
+     bindchange="bindEmptyTimeChange" 
+    >
+      <view class="picker">
+        <label>空瓶日期：</label>{{emptyDate}}
+      </view>
+    </picker>
+  </view>
+  <!-- 商品图片 -->
+  <view class='form-item'>
+    <label>商品图片：</label>
+    <view catchtap='chooseImage' class='form-item-pic'>
+      <image src="{{logo}}"></image>
+    </view>
+  </view>
+
+  <button
+    type='default'
+    size='default'
+    form-type='submit'
+  >
+  提交
+  </button>
+</form>

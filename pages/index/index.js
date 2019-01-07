@@ -8,7 +8,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     array1: [],
-    array2: []
+    array2: [],
+    array3: []
   },
   //事件处理函数
   bindViewTap: function() {
@@ -58,9 +59,6 @@ Page({
       hasUserInfo: true
     })
   },
-  hide () {
-    console.log(1)
-  },
   /**
    * 获取分类数据
    */
@@ -74,17 +72,20 @@ Page({
       wx.hideLoading()
       if (res.result && res.result.code === 0) {
         let datas = res.result.datas
-        let arr1 = [], arr2 = []
+        let arr1 = [], arr2 = [], arr3 = [];
         datas.map(item => {
-          if (item.type === 0) {
+          if (item.type == 0) {
             arr1.push(item)
-          } else {
+          } else if (item.type == 1) {
             arr2.push(item)
+          } else {
+            arr3.push(item)
           }
         })
         this.setData({
           array1: arr1,
-          array2: arr2
+          array2: arr2,
+          array3: arr3
         })
       }
     })

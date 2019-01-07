@@ -1,8 +1,5 @@
 /**app.wxss**/
 @import "/lib/style/iconfont.wxss";
-page {
-  background-color: #b3d4db;
-}
 .container {
   height: 100%;
   display: flex;
@@ -20,4 +17,11 @@ page {
 
 text {
   font-family: MicroSoft Yahei;
+}
+
+.no-data {
+  margin-top: 100rpx;
+  color: red;
+  text-align: center;
+  font-size: 26rpx;
 }
